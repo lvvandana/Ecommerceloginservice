@@ -23,13 +23,18 @@ pipeline:
                   identifier: echo
                   name: echo
                   spec:
+                    connectorRef: account.harnessImage
+                    image: java
+                    shell: Sh
                     command: echo hello world
                   timeout: ""
                   type: Run
-          platform:
-            arch: Amd64
-            os: Linux
-          runtime:
-            spec: {}
-            type: Docker
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: kubesampleproj
+              namespace: harness-delegate-ng
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Windows
         type: CI
