@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_Ecommerceloginservice_1719419887249-pr-trigger-input-set
+  identifier: Build_Ecommerceloginservice_1719419887249prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_Ecommerceloginservice_1719419887249
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
